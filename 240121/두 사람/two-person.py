@@ -1,7 +1,7 @@
-1a, 1g = input().split()
-2a, 2g = input().split()
+a1, g1 = input().split()
+a2, g2 = input().split()
 
-if (int(1a) >= 19) and (1g == 'M') or (int(2a) >= 19) and (2g == "M"):
+if (int(a1) >= 19) and (g1 == 'M') or (int(a2) >= 19) and (g2 == "M"):
     print(1)
 else:
     print(0)
