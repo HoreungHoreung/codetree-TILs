@@ -21,4 +21,4 @@ for _ in range(t):
     else:
         move_dir = 3 - move_dir
 
-print(x + 1, y +_1)
+print(x + 1, y + 1)
