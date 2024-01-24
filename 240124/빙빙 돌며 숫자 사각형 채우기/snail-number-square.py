@@ -12,7 +12,7 @@ arr = [
 arr[x][y] = 1
 
 def in_range(x, y):
-    return  0 <= x and x < n and 0 <= y and y < n
+    return  0 <= x and x < n and 0 <= y and y < m
 
 for i in range(2, n * m + 1 ):
     nx, ny = x + dxs[c_dir], y + dys[c_dir]
