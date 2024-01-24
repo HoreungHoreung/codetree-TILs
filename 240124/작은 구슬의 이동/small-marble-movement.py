@@ -1,28 +1,24 @@
 n, t = tuple(map(int, input().split()))
-r, c, d = input().split()
-r,c = int(r), int(c)
-
-dxs, dys = [0, -1, 1, 0], [1, 0, 0,-1]
+x, y, c_dir = tuple(input().split())
 
 mapper = {
-    'R': 0,
-    'U': 1,
-    'D': 2,
-    'L': 3,
-    3 : 'L',
-    2 : 'D',
-    1 : 'U',
-    0 : 'R'
+    'R' : 0,
+    'D' : 1, 
+    'U' : 2,
+    'L' : 3
 }
 
+x, y, move_dir = int(x)-1, int(y)-1, mapper[c_dir]
+dxs, dys = [0, 1, -1, 0], [1, 0, 0, -1]
+
 def in_range(x, y):
-    return 1 <= x and x <= n and 1 <= y and y <= n
+    return 0 <= x and x < n and 0 <= y and y < n
 
 for _ in range(t):
-    if in_range(r + dxs[mapper[d]], c + dys[mapper[d]]):
-        r += dxs[mapper[d]]
-        c += dys[mapper[d]]
+    nx, ny = x + dxs[move_dir], y + dys[move_dir]
+    if in_range(nx, ny):
+        x, y = nx, ny
     else:
-        d = mapper[3 - mapper[d]] 
+        move_dir = 3 - move_dir
 
-print(r,c)
+print(x + 1, y +_1)
