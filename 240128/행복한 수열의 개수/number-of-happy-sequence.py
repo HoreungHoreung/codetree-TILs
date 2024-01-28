@@ -1,6 +1,6 @@
 n, m = tuple(map(int, input().split()))
 grid = [
-    tuple(map(int, input().split()))
+    list(map(int, input().split()))
     for _ in range(n)
 ]
 
