@@ -1,44 +1,34 @@
 n, m = tuple(map(int, input().split()))
-
 grid = [
     tuple(map(int, input().split()))
     for _ in range(n)
 ]
 
-def is_happy_row(row):
-    consecutive = 1
-    for i in range(n - 1):
-        if grid[row][i] == grid[row][i + 1]:
-            consecutive += 1
+seq = [0 for _ in range(n)]
+
+def is_happy_sequence():
+    consecutive_count, max_ccnt = 1, 1
+    for i in range(1, n):
+        if seq[i - 1] == seq[i]:
+            consecutive_count += 1
         else:
-            consecutive = 1
-        
-        if consecutive >= m:
-            return True
+            consecutive_count = 1
 
-def is_happy_col(col):
-    consecutive = 1
-    for i in range(n - 1):
-        if grid[i][col] == grid[i + 1][col]:
-            consecutive += 1
-        else:
-            consecutive = 1
+        max_ccnt = max(max_ccnt, consecutive_count)
 
-        if consecutive >= m:
-            return True 
+    return max_ccnt >= m
 
-        
+num_happy = 0
 
+for i in range(n):
+    seq = grid[i][:]
 
-happy_sequence = 0
-for row in range(n):
-    if is_happy_row(row):
-        happy_sequence += 1
+    if is_happy_sequence():
+        num_happy += 1
 
-for col in range(n):
-    if is_happy_col(col):
-        happy_sequence += 1
-
-
-
-print(happy_sequence)
+for i in range(n):
+    for j in range(n):
+        seq[j] = grid[j][i]
+    if is_happy_sequence():
+        num_happy += 1
+print(num_happy)
