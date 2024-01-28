@@ -40,6 +40,6 @@ for col in range(n):
         happy_sequence += 1
 
 if n == 1 and m == 1:
-    happy_sequence = 1
+    happy_sequence = 2
 
 print(happy_sequence)
