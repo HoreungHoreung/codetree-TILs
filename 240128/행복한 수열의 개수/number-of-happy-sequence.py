@@ -7,8 +7,8 @@ grid = [
 
 def is_happy_row(row):
     consecutive = 1
-    for i in range(1, n):
-        if grid[row][i - 1] == grid[row][i]:
+    for i in range(n - 1):
+        if grid[row][i] == grid[row][i + 1]:
             consecutive += 1
         else:
             consecutive = 1
@@ -18,8 +18,8 @@ def is_happy_row(row):
 
 def is_happy_col(col):
     consecutive = 1
-    for i in range(1, n):
-        if grid[i - 1][col] == grid[i][col]:
+    for i in range(n - 1):
+        if grid[i][col] == grid[i + 1][col]:
             consecutive += 1
         else:
             consecutive = 1
@@ -39,7 +39,6 @@ for col in range(n):
     if is_happy_col(col):
         happy_sequence += 1
 
-if n == 1 and m == 1:
-    happy_sequence = 2
+
 
 print(happy_sequence)
