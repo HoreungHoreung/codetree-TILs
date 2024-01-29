@@ -16,6 +16,6 @@ def find_permutation(cnt):
             continue
         
         selected_nums.append(i)
-        find_permutation(i + 1)
+        find_permutation(cnt + 1)
         selected_nums.pop()
 find_permutation(0)
