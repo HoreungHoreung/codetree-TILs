@@ -13,8 +13,8 @@ def find_nums(curr_num):
         return
 
     for i in range(K):
-        selected_nums.append(i)
-        print_nums(curr_num + 1)
+        selected_nums.append(i + 1)
+        find_nums(curr_num + 1)
         selected_nums.pop()
 
 
