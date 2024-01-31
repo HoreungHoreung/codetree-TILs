@@ -20,7 +20,6 @@ def dfs(vertex):
 
 
 root_vertex = 1
-graph[root_vertex][root_vertex] = 1
 visited[root_vertex] = True
 dfs(root_vertex)
 
