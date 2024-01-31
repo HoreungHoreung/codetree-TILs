@@ -13,7 +13,7 @@ for _ in range(M):
 visited = [False for _ in range(N + 1)]
 
 def dfs(vertex):
-    for curr_v in range(N):
+    for curr_v in range(1, N + 1):
         if graph[vertex][curr_v] and not visited[curr_v]:
             visited[curr_v] = True
             dfs(curr_v)
