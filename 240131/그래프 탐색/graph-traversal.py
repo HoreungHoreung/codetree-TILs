@@ -13,19 +13,19 @@ for _ in range(M):
 visited = [False for _ in range(N + 1)]
 
 def dfs(vertex):
-    for curr_v in graph[vertex]:
+    for curr_v in range(N):
         if graph[vertex][curr_v] and not visited[curr_v]:
-
             visited[curr_v] = True
             dfs(curr_v)
 
+
 root_vertex = 1
+graph[root_vertex][root_vertex] = 1
 visited[root_vertex] = True
 dfs(root_vertex)
 
-cnt = 1
+cnt = 0
 for elem in visited:
     if elem == True:
         cnt += 1
-
-print(cnt)
+print(cnt - 1)
