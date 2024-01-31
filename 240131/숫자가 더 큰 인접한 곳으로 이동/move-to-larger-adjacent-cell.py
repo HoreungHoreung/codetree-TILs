@@ -13,7 +13,7 @@ visited.append(grid[curr_x][curr_y])
 
 
 def in_range(x, y):
-    return 0 <= x and x <= n and 0 <= y and y <= n
+    return 0 <= x and x < n and 0 <= y and y < n
 
 def can_move(x, y):
     return in_range(x, y) and grid[x][y] > grid[curr_x][curr_y]
@@ -25,6 +25,8 @@ def simulation():
 
     
     for dx, dy in zip(dxs, dys):
+        if not in_range(curr_x + dx, curr_y + dy):
+            continue
         next_x, next_y = curr_x + dx, curr_y + dy
 
         if can_move(next_x, next_y):
