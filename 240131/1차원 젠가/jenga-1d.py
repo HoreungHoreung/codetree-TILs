@@ -1,24 +1,28 @@
 n = int(input())
-arr = [
+numbers = [
     int(input())
     for _ in range(n)
 ]
 
-temp = []
+end_of_array = n
 
-s1, e1 = tuple(map(int, input().split()))
-s2, e2 = tuple(map(int, input().split()))
+def cut_array(start_idx, end_idx):
+    global end_of_array, numbers
+    temp_arr = []
 
-for i in range(n):
-    if i < s1 - 1 or i > e1 - 1:
-        temp.append(arr[i])
-arr = temp
+    for i in range(end_of_array):
+        if i < start_idx or i > end_idx:
+            temp_arr.append(numbers[i])
 
-temp = []
-for i in range(len(arr)):
-    if i < s2 - 1 or i > e2 - 1:
-        temp.append(arr[i])
-arr = temp
-print(len(arr))
-for elem in arr:
-    print(elem)
+    end_of_array = len(temp_arr)
+    for i in range(end_of_array):
+        numbers[i] = temp_arr[i]
+    
+for _ in range(2):
+    s, e = tuple(map(int, input().split()))
+
+    cut_array(s - 1, e - 1)
+
+print(end_of_array)
+for i in range(end_of_array):
+    print(numbers[i])
