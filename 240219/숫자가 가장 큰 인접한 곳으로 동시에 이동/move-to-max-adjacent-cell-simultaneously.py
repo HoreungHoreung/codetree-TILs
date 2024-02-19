@@ -41,7 +41,7 @@ def get_next_pos(x, y):
     max_num, max_pos = arr[x][y], (x, y)
     for dx, dy in zip(dxs, dys):
         next_x, next_y = x + dx, y + dy
-        if in_range(next_x, next_y) and arr[next_x][next_y] > arr[x][y]:
+        if in_range(next_x, next_y) and arr[next_x][next_y] > max_num:
             max_num = arr[next_x][next_y]
             max_pos = (next_x, next_y)
     return max_pos
