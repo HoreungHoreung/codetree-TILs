@@ -19,12 +19,10 @@ for _ in range(m):
     count[r - 1][c - 1] = 1
 
 def move(x, y):
-    global new_count
     next_x, next_y = get_next_pos(x, y)
     new_count[next_x][next_y] += 1
 
 def move_all():
-    global new_count
     for i in range(n):
         for j in range(n):
             new_count[i][j] = 0
