@@ -38,7 +38,7 @@ def move_all():
 
 def get_next_pos(x, y):
     dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
-    max_num, max_pos = 0, (0, 0)
+    max_num, max_pos = arr[x][y], (x, y)
     for dx, dy in zip(dxs, dys):
         next_x, next_y = x + dx, y + dy
         if in_range(next_x, next_y) and arr[next_x][next_y] > arr[x][y]:
