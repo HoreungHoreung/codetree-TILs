@@ -57,7 +57,7 @@ def simulate():
 def remove_duplicate_marbles():
     for i in range(n):
         for j in range(n):
-            if count[i][j] > 1:
+            if count[i][j] >= 2:
                 count[i][j] = 0
 
 for _ in range(t):
