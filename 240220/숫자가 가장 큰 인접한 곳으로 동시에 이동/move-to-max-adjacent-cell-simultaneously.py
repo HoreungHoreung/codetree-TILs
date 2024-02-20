@@ -27,8 +27,8 @@ def move(x, y): #각 공을 다음 위치로 옮긴 next_count 배열을 최신�
 
 def get_next_pos(curr_x, curr_y): #다음 공의 위치를 찾는함수
     dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
-    max_num = arr[curr_x][curr_y]
-    max_pos = (curr_x, curr_y)
+    max_num = 0
+    max_pos = (0, 0)
     for dx, dy in zip(dxs, dys):
         next_x, next_y = curr_x + dx, curr_y + dy
         if in_range(next_x, next_y) and arr[next_x][next_y] > max_num:
